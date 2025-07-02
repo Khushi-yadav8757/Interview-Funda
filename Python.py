@@ -51,25 +51,19 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
+------------------------------------------------------------------------------------------------    
 2. Check if a string is a Palindrome
-python
-Copy
-Edit
 def is_palindrome(s):
     return s == s[::-1]
+-----------------------------------------------------------------------------------
 3. Print Fibonacci series up to n terms
-python
-Copy
-Edit
 def fibonacci(n):
     a, b = 0, 1
     for _ in range(n):
         print(a, end=' ')
         a, b = b, a + b
+--------------------------------------------------------------------------------------        
 4. Find factorial of a number using recursion
-python
-Copy
-Edit
 def factorial(n):
     if n <= 1:
         return 1
@@ -89,20 +83,18 @@ a, b = b, a
 7. Find the largest/smallest number in a list
 def largest_smallest(lst):
     return max(lst), min(lst)
+---------------------------------------------------------------------------------------------    
 8. Reverse a list or string
 lst = [1, 2, 3]
 reversed_lst = lst[::-1]
-
 s = "python"
 reversed_str = s[::-1]
+--------------------------------------------------------------------------------
 9. Find duplicate elements in a list
-python
-Copy
-Edit
 def find_duplicates(lst):
     return list(set([x for x in lst if lst.count(x) > 1]))
+-----------------------------------------------------------------------------------
 10. Check if a number is Armstrong
-
 def is_armstrong(n):
     digits = str(n)
     power = len(digits)
