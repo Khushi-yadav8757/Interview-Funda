@@ -74,31 +74,22 @@ def factorial(n):
     if n <= 1:
         return 1
     return n * factorial(n - 1)
+--------------------------------------------------------------------------------------
 5. Count vowels and consonants in a string
-python
-Copy
-Edit
 def count_vowels_consonants(s):
     vowels = 'aeiouAEIOU'
     v = sum(1 for ch in s if ch in vowels)
     c = sum(1 for ch in s if ch.isalpha() and ch not in vowels)
     return v, c
+-----------------------------------------------------------------------------------------    
 6. Swap two numbers without using a third variable
-python
-Copy
-Edit
 a, b = 5, 10
 a, b = b, a
+------------------------------------------------------------------------------------------------
 7. Find the largest/smallest number in a list
-python
-Copy
-Edit
 def largest_smallest(lst):
     return max(lst), min(lst)
 8. Reverse a list or string
-python
-Copy
-Edit
 lst = [1, 2, 3]
 reversed_lst = lst[::-1]
 
