@@ -12,7 +12,7 @@ Reverse a list or string
 Find duplicate elements in a list
 Check if a number is Armstrong
 
-✅ Intermediate Python Questions (Logic + Programming)
+ Intermediate Python Questions (Logic + Programming)
 
 Sort a list without using sort() or sorted()
 Find the second largest element in a list
@@ -24,8 +24,8 @@ Implement binary search
 Count frequency of characters in a string (using dictionary)
 Write a Python program to check if a list is palindrome
 Flatten a nested list
-
-✅ Data Structure and Algorithm Based
+-----------------------------------------------------------------------------------------------
+ Data Structure and Algorithm Based
 
 Implement Stack using List
 Implement Queue using Collections module
@@ -39,7 +39,7 @@ Count number of words in a paragraph
 Group anagrams from a list of words
 
 ---------------------------------------------------------------------------------------
-✅ Basic Python Programming Questions
+ Basic Python Programming Questions
 1. Check if a number is Prime
 python
 Copy
@@ -172,7 +172,7 @@ def flatten(lst):
         else:
             flat.append(i)
     return flat
-✅ Data Structure and Algorithm Based
+Data Structure and Algorithm Based
 ----------------------------------------------------------------------------
 21. Implement Stack using List
 stack = []
@@ -259,7 +259,7 @@ def group_anagrams(words):
     for word in words:
         groups[''.join(sorted(word))].append(word)
     return list(groups.values())
-    ---------------------✅ Extra Practice
+    --------------------- Extra Practice
 Check if a number is Palindrome
 
 def is_num_palindrome(n):
@@ -309,7 +309,7 @@ def count_vowels(s):
     return sum(1 for ch in s.lower() if ch in 'aeiou')
 
 print("Q5:", count_vowels("Interview"))  # Output: 4
-✅ Q6. Find the Frequency of Elements in a List
+Q6. Find the Frequency of Elements in a List
 Company: Capgemini - 2023
 
 # -----------------------------
@@ -323,10 +323,7 @@ def count_frequency(lst):
 
 print("Q6:", count_frequency([1, 2, 2, 3, 3, 3]))  
 # Output: {1: 1, 2: 2, 3: 3}
-✅ Q7. Check Prime Number
-Company: Cognizant - 2022
-
-# -----------------------------
+--------------------------------------------------------------------------------------------------
 # Q7. Check if a number is prime
 # Company: Cognizant - 2022
 def is_prime(n):
