@@ -40,7 +40,6 @@ public class JavaQ4 {
         System.out.println("After: a=" + a + ", b=" + b);
     }
 }
-
  --------------------------------------------------------------------------
  Q5. Find second largest number in array
  Company: Infosys - 2022
@@ -140,5 +139,39 @@ public class JavaQ10 {
             }
             System.out.println();
         }
+    }
+}
+----------------------------------------------------------------------------------------------------
+  Q11. Sum of Digits of a Number
+Company: Infosys – 2022
+public class JavaQ11 {
+    public static int digitSum(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Q11: " + digitSum(1234));  // Output: 10
+    }
+}
+---------------------------------------------------------------------------------------------
+Q12. Check if Number is Prime or Not
+Company: Cognizant – 2023
+public class JavaQ12 {
+    public static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Q12: " + isPrime(17));  // Output: true
     }
 }
