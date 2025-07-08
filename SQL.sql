@@ -45,7 +45,7 @@ GROUP BY Department;
 SELECT ManagerID, COUNT(*) AS TeamSize
 FROM Employee
 GROUP BY ManagerID;
------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
 7. Find the second highest salary from the Employee table.
 
@@ -53,7 +53,7 @@ SELECT MAX(salary)
 FROM employee
 WHERE salary < (SELECT MAX(salary) FROM employee);
 
-------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 8. Find employees who have the same salary.
 
 SELECT salary
