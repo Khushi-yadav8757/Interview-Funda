@@ -108,7 +108,7 @@ SELECT *
 FROM employee
 ORDER BY salary DESC
 LIMIT 3;
-
+---------------------------------------------------------------------------------------
 10. Write a query to fetch even-numbered employee IDs.
 
 SELECT *
