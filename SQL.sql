@@ -1,5 +1,5 @@
  SQL INTERVIEW QUESTIONS - TCS, INFOSYS, WIPRO, CAPGEMINI
-
+_______________________________________________________________
 Q1. Find the second highest salary
    Company: Infosys - 2023
    
