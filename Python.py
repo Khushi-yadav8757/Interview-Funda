@@ -123,7 +123,7 @@ def is_anagram(s1, s2):
 14. Find missing number in a list of 1 to n
 def missing_number(lst, n):
     return (n * (n + 1)) // 2 - sum(lst)
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 15. Find all pairs with a given sum
 def pair_sum(arr, target):
     result = []
