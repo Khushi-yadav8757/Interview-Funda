@@ -175,3 +175,110 @@ public class JavaQ12 {
         System.out.println("Q12: " + isPrime(17));  // Output: true
     }
 }
+-----------------------------------------------------------------------------------------------------
+
+ // 1. What is Java?
+// Java is a high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible.
+
+--------------------------------------------------------------------------------
+
+// 2. What is the difference between JDK, JRE, and JVM?
+// JVM - Java Virtual Machine: Runs Java bytecode.
+// JRE - Java Runtime Environment: JVM + libraries for running Java apps.
+// JDK - Java Development Kit: JRE + tools for development (compiler, debugger).
+
+--------------------------------------------------------------------------------
+
+// 3. What is the main() method in Java?
+// It's the entry point of any Java program.
+// Syntax: public static void main(String[] args)
+
+--------------------------------------------------------------------------------
+
+// 4. What are data types in Java?
+// Primitive: byte, short, int, long, float, double, char, boolean
+// Non-Primitive: String, Arrays, Classes, Interfaces, etc.
+
+--------------------------------------------------------------------------------
+
+// 5. What are the access modifiers in Java?
+// public, private, protected, default — control visibility of classes and members.
+
+--------------------------------------------------------------------------------
+
+// 6. What is a constructor in Java?
+// A constructor is a special method that is called when an object is instantiated.
+
+--------------------------------------------------------------------------------
+
+// 7. What is the difference between == and .equals() in Java?
+// == checks reference equality.
+// .equals() checks logical/content equality.
+
+--------------------------------------------------------------------------------
+
+// 8. What is inheritance in Java?
+// One class can inherit fields and methods from another class using `extends`.
+
+--------------------------------------------------------------------------------
+
+// 9. What is method overloading and overriding?
+// Overloading: Same method name with different parameters (compile-time).
+// Overriding: Subclass redefines a superclass method (runtime).
+
+--------------------------------------------------------------------------------
+
+// 10. What is an interface?
+// An interface is a contract — it contains method signatures without implementation.
+
+--------------------------------------------------------------------------------
+
+// 11. Difference between abstract class and interface?
+// Abstract class can have method implementations; interfaces cannot (Java 7).
+
+--------------------------------------------------------------------------------
+
+// 12. What are static methods and variables?
+// Shared by all objects; not tied to any instance.
+
+--------------------------------------------------------------------------------
+
+// 13. What is final keyword?
+// Used to declare constants, prevent method overriding, or class inheritance.
+
+--------------------------------------------------------------------------------
+
+// 14. What is a package in Java?
+// Packages are namespaces that organize classes and interfaces.
+
+--------------------------------------------------------------------------------
+
+// 15. Explain exception handling in Java.
+// Using try, catch, finally, and throw keywords.
+
+--------------------------------------------------------------------------------
+
+// 16. What is the difference between checked and unchecked exceptions?
+// Checked: Caught at compile-time (e.g., IOException)
+// Unchecked: Caught at runtime (e.g., NullPointerException)
+
+--------------------------------------------------------------------------------
+
+// 17. What is the difference between Array and ArrayList?
+// Array: Fixed size, stores primitive & objects.
+// ArrayList: Dynamic size, stores only objects.
+
+--------------------------------------------------------------------------------
+
+// 18. What is multithreading?
+// Running multiple threads (lightweight processes) simultaneously.
+
+--------------------------------------------------------------------------------
+
+// 19. What is the use of the 'this' keyword?
+// Refers to the current instance of the class.
+
+--------------------------------------------------------------------------------
+
+// 20. What is garbage collection in Java?
+// Automatic memory management to free up space by deleting unreachable objects.
