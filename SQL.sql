@@ -114,4 +114,106 @@ LIMIT 3;
 SELECT *
 FROM employee
 WHERE MOD(emp_id, 2) = 0;
-------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+16. Find employees who joined in the year 2023.
+SELECT *
+FROM employee
+WHERE YEAR(joining_date) = 2023;
+
+--------------------------------------------------------------------------------
+
+17. Write a query to count the number of employees in each department.
+SELECT department, COUNT(*) AS total_employees
+FROM employee
+GROUP BY department;
+
+--------------------------------------------------------------------------------
+
+18. Write a query to find the employees with the highest salary in each department.
+SELECT *
+FROM employee e
+WHERE salary = (
+  SELECT MAX(salary)
+  FROM employee
+  WHERE department = e.department
+);
+
+--------------------------------------------------------------------------------
+
+19. Display employees whose names start with the letter 'A'.
+SELECT *
+FROM employee
+WHERE name LIKE 'A%';
+
+--------------------------------------------------------------------------------
+
+20. Write a query to find the total salary paid by each department.
+SELECT department, SUM(salary) AS total_salary
+FROM employee
+GROUP BY department;
+21. Find the employees who do not have a manager (NULL in manager_id).
+SELECT *
+FROM employee
+WHERE manager_id IS NULL;
+
+--------------------------------------------------------------------------------
+
+22. Retrieve the department with the maximum number of employees.
+SELECT department
+FROM employee
+GROUP BY department
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+--------------------------------------------------------------------------------
+
+23. Write a query to calculate the average salary of employees.
+SELECT AVG(salary) AS average_salary
+FROM employee;
+
+--------------------------------------------------------------------------------
+
+24. Display the first 5 records from the employee table.
+SELECT *
+FROM employee
+LIMIT 5;
+
+--------------------------------------------------------------------------------
+
+25. Fetch the list of employees who have 'developer' in their job title.
+SELECT *
+FROM employee
+WHERE job_title LIKE '%developer%';
+
+--------------------------------------------------------------------------------
+
+26. Write a query to update the salary of all employees by 10%.
+UPDATE employee
+SET salary = salary * 1.10;
+
+--------------------------------------------------------------------------------
+
+27. Delete all records of employees who have left the company.
+DELETE FROM employee
+WHERE status = 'resigned';
+
+--------------------------------------------------------------------------------
+
+28. Add a new column named `bonus` to the employee table.
+ALTER TABLE employee
+ADD COLUMN bonus DECIMAL(10,2);
+
+--------------------------------------------------------------------------------
+
+29. Set the bonus as 5000 for employees in the 'Sales' department.
+UPDATE employee
+SET bonus = 5000
+WHERE department = 'Sales';
+
+--------------------------------------------------------------------------------
+
+30. Find employees who joined in the last 6 months.
+SELECT *
+FROM employee
+WHERE joining_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH);
+
