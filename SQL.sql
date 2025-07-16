@@ -216,4 +216,162 @@ WHERE department = 'Sales';
 SELECT *
 FROM employee
 WHERE joining_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH);
+31. [TCS] Retrieve employees earning more than the average salary.
+SELECT *
+FROM employee
+WHERE salary > (
+  SELECT AVG(salary)
+  FROM employee
+);
 
+--------------------------------------------------------------------------------
+
+32. [Wipro] Get the details of the employee with the second highest salary.
+SELECT *
+FROM employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
+
+--------------------------------------------------------------------------------
+
+33. [Infosys] Show employees grouped by department with total salary > 100000.
+SELECT department, SUM(salary) AS total_salary
+FROM employee
+GROUP BY department
+HAVING SUM(salary) > 100000;
+
+--------------------------------------------------------------------------------
+
+34. [Capgemini] List employees who have the same salary.
+SELECT salary, COUNT(*) 
+FROM employee
+GROUP BY salary
+HAVING COUNT(*) > 1;
+
+--------------------------------------------------------------------------------
+
+35. [Accenture] Get employee names with length greater than 5 characters.
+SELECT *
+FROM employee
+WHERE LENGTH(name) > 5;
+
+--------------------------------------------------------------------------------
+
+36. [TCS] Fetch all employees along with their manager names (Self-Join).
+SELECT e.name AS employee, m.name AS manager
+FROM employee e
+LEFT JOIN employee m ON e.manager_id = m.emp_id;
+
+--------------------------------------------------------------------------------
+
+37. [Wipro] Find the department(s) with the minimum average salary.
+SELECT department
+FROM employee
+GROUP BY department
+ORDER BY AVG(salary)
+LIMIT 1;
+
+--------------------------------------------------------------------------------
+
+38. [Infosys] Display employee records in alphabetical order.
+SELECT *
+FROM employee
+ORDER BY name ASC;
+
+--------------------------------------------------------------------------------
+
+39. [Capgemini] Count how many employees are in each job title.
+SELECT job_title, COUNT(*) AS total
+FROM employee
+GROUP BY job_title;
+
+--------------------------------------------------------------------------------
+
+40. [Accenture] Find employees hired on weekends.
+SELECT *
+FROM employee
+WHERE DAYOFWEEK(joining_date) IN (1, 7); -- 1 = Sunday, 7 = Saturday
+31. [TCS] Retrieve employees earning more than the average salary.
+SELECT *
+FROM employee
+WHERE salary > (
+  SELECT AVG(salary)
+  FROM employee
+);
+
+--------------------------------------------------------------------------------
+
+32. [Wipro] Get the details of the employee with the second highest salary.
+SELECT *
+FROM employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
+
+--------------------------------------------------------------------------------
+
+33. [Infosys] Show employees grouped by department with total salary > 100000.
+SELECT department, SUM(salary) AS total_salary
+FROM employee
+GROUP BY department
+HAVING SUM(salary) > 100000;
+
+--------------------------------------------------------------------------------
+
+34. [Capgemini] List employees who have the same salary.
+SELECT salary, COUNT(*) 
+FROM employee
+GROUP BY salary
+HAVING COUNT(*) > 1;
+
+--------------------------------------------------------------------------------
+
+35. [Accenture] Get employee names with length greater than 5 characters.
+SELECT *
+FROM employee
+WHERE LENGTH(name) > 5;
+
+--------------------------------------------------------------------------------
+
+36. [TCS] Fetch all employees along with their manager names (Self-Join).
+SELECT e.name AS employee, m.name AS manager
+FROM employee e
+LEFT JOIN employee m ON e.manager_id = m.emp_id;
+
+--------------------------------------------------------------------------------
+
+37. [Wipro] Find the department(s) with the minimum average salary.
+SELECT department
+FROM employee
+GROUP BY department
+ORDER BY AVG(salary)
+LIMIT 1;
+
+--------------------------------------------------------------------------------
+
+38. [Infosys] Display employee records in alphabetical order.
+SELECT *
+FROM employee
+ORDER BY name ASC;
+
+--------------------------------------------------------------------------------
+
+39. [Capgemini] Count how many employees are in each job title.
+SELECT job_title, COUNT(*) AS total
+FROM employee
+GROUP BY job_title;
+
+--------------------------------------------------------------------------------
+
+40. [Accenture] Find employees hired on weekends.
+SELECT *
+FROM employee
+WHERE DAYOFWEEK(joining_date) IN (1, 7); -- 1 = Sunday, 7 = Saturday
+31. [TCS] Retrieve employees earning more than the average salary.
+SELECT *
+FROM employee
+WHERE salary > (
+  SELECT AVG(salary)
+  FROM employee
+);
+
+--------------------------------------------------------------------------------
