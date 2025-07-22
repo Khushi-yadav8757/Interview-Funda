@@ -335,5 +335,27 @@ def is_prime(n):
     return True
 
 print("Q7:", is_prime(7))  # Output: True
+---------------------------------------------------------------------------------------------------------------
+#Q8. Count Frequency of Each Word in a Text
+text = "TCS is a global company and TCS hires smart people"
+words = text.lower().split()
+freq = {}
 
+for word in words:
+    freq[word] = freq.get(word, 0) + 1
 
+print(freq)
+-----------------------------------------------------------------------------------------
+#Find Top 3 Highest Values from a List
+data = [50, 20, 40, 70, 80, 90, 60]
+top_3 = sorted(data, reverse=True)[:3]
+print("Top 3 values:", top_3)
+-----------------------------------------------------------------------------
+# Replace Missing Values in a List with the Mean
+data = [10, None, 30, 40, None, 50]
+cleaned = [x for x in data if x is not None]
+mean_val = sum(cleaned) / len(cleaned)
+
+filled_data = [x if x is not None else mean_val for x in data]
+print(filled_data)
+--------------------------------------------------------------------------
