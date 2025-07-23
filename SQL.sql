@@ -7,7 +7,7 @@ SELECT MAX(Salary) AS SecondHighest
 FROM Employee
 WHERE Salary < (SELECT MAX(Salary) FROM Employee);
 
--------------------------------------------------------------------------
+--------------------------------------------------------------
  Q2. Get employees with duplicate email
  Company: Capgemini - 2022
    
