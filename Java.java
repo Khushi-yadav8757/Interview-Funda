@@ -251,7 +251,7 @@ public class JavaQ12 {
 // 14. What is a package in Java?
 // Packages are namespaces that organize classes and interfaces.
 
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 // 15. Explain exception handling in Java.
 // Using try, catch, finally, and throw keywords.
