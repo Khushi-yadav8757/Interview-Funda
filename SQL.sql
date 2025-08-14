@@ -374,3 +374,39 @@ WHERE salary > (
   FROM employee
 );
 --------------------------------------------------------------------------------
+41. Difference between INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN
+-- INNER JOIN: returns only matching rows
+SELECT *
+FROM employees e
+INNER JOIN departments d ON e.department_id = d.department_id;
+
+-- LEFT JOIN: all from left + matching from right
+SELECT *
+FROM employees e
+LEFT JOIN departments d ON e.department_id = d.department_id;
+
+-- RIGHT JOIN: all from right + matching from left
+SELECT *
+FROM employees e
+RIGHT JOIN departments d ON e.department_id = d.department_id;
+
+-- FULL OUTER JOIN: all from both sides
+SELECT *
+FROM employees e
+FULL OUTER JOIN departments d ON e.department_id = d.department_id;
+----------------------------------------------------------------------------------------------
+42. Find duplicate records
+SELECT emp_name, COUNT(*) AS cnt
+FROM employees
+GROUP BY emp_name
+HAVING COUNT(*) > 1;
+----------------------------------------------------------------------------------------------
+WHERE vs HAVING
+WHERE → filters before grouping.
+HAVING → filters after grouping.
+ans:- -- Example
+SELECT department, COUNT(*) AS total
+FROM employees
+WHERE salary > 3000        -- filter before grouping
+GROUP BY department
+HAVING COUNT(*) > 5;       -- filter after grouping
