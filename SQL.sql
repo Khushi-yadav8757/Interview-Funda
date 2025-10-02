@@ -440,14 +440,22 @@ SELECT * FROM employees WHERE name LIKE 'A%';
 ------------------------------------------------------------------------------------------
 --DISTINCT Keyword
 Removes duplicate values.
-
+ex-
 SELECT DISTINCT department 
 FROM employees;
 ------------------------------------------------------------------------------------------
 --ORDER BY Clause
 
 Sorts results in ascending (ASC, default) or descending (DESC) order.
-Ans:-
+ex-
+SELECT * 
+FROM employees 
+ORDER BY salary DESC;
+------------------------------------------------------------------------------------------
+--ORDER BY Clause
+ex-
+Sorts results in ascending (ASC, default) or descending (DESC) order.
+
 SELECT * 
 FROM employees 
 ORDER BY salary DESC;
