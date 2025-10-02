@@ -401,12 +401,53 @@ FROM employees
 GROUP BY emp_name
 HAVING COUNT(*) > 1;
 ----------------------------------------------------------------------------------------------
-WHERE vs HAVING
+--WHERE vs HAVING
 WHERE → filters before grouping.
 HAVING → filters after grouping.
-ans:- -- Example
+ans:- 
 SELECT department, COUNT(*) AS total
 FROM employees
-WHERE salary > 3000        -- filter before grouping
+WHERE salary > 3000        
 GROUP BY department
-HAVING COUNT(*) > 5;       -- filter after grouping
+HAVING COUNT(*) > 5;       
+-----------------------------------------------------------------------------------------------
+SELECT * 
+FROM employees
+WHERE department = 'HR' AND salary > 40000;
+
+SELECT * 
+FROM employees
+WHERE department = 'HR' OR department = 'Finance';
+
+SELECT * 
+FROM employees
+WHERE NOT department = 'Sales';
+------------------------------------------------------------------------------------------------
+-- Salary equal to 50000
+SELECT * FROM employees WHERE salary = 50000;
+
+-- Not equal
+SELECT * FROM employees WHERE salary != 50000;
+
+-- Between
+SELECT * FROM employees WHERE salary BETWEEN 40000 AND 60000;
+
+-- In
+SELECT * FROM employees WHERE department IN ('HR', 'Finance');
+
+-- Like (starts with 'A')
+SELECT * FROM employees WHERE name LIKE 'A%';
+------------------------------------------------------------------------------------------
+--DISTINCT Keyword
+Removes duplicate values.
+
+SELECT DISTINCT department 
+FROM employees;
+------------------------------------------------------------------------------------------
+--ORDER BY Clause
+
+Sorts results in ascending (ASC, default) or descending (DESC) order.
+Ans:-
+SELECT * 
+FROM employees 
+ORDER BY salary DESC;
