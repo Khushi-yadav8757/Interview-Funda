@@ -459,3 +459,207 @@ Sorts results in ascending (ASC, default) or descending (DESC) order.
 SELECT * 
 FROM employees 
 ORDER BY salary DESC;
+-------------------------------------------------------------------------------------------
+What is SQL? Difference between SQL and MySQL?
+
+SQL (Structured Query Language) is a language to interact with databases.
+
+MySQL is a relational database management system (RDBMS) that uses SQL.
+--------------------------------------------------------------------------------------------
+2. What are DDL, DML, DCL, TCL commands with examples?
+
+DDL (Data Definition Language): Defines structure → CREATE, ALTER, DROP
+
+DML (Data Manipulation Language): Manipulates data → INSERT, UPDATE, DELETE
+
+DCL (Data Control Language): Permissions → GRANT, REVOKE
+
+TCL (Transaction Control Language): Manage transactions → COMMIT, ROLLBACK, SAVEPOINT
+------------------------------------------------------------------------------------------------
+3. Difference between DELETE, TRUNCATE, DROP
+
+DELETE: Removes rows (can use WHERE). Rollback possible.
+
+TRUNCATE: Removes all rows, resets identity, faster than DELETE. Cannot use WHERE.
+
+DROP: Deletes the whole table (structure + data).
+---------------------------------------------------------------------------------------------------
+4. Difference between WHERE and HAVING
+
+WHERE: Used before aggregation, filters rows.
+
+HAVING: Used after aggregation, filters groups.
+
+SELECT dept, COUNT(*) 
+FROM employees 
+WHERE salary > 30000 
+GROUP BY dept 
+HAVING COUNT(*) > 5;
+-------------------------------------------------------------------------------------------------
+
+5. Constraints (Primary, Unique, Foreign, Check)
+
+PRIMARY KEY: Unique + Not Null.
+
+UNIQUE: Unique but can have NULL.
+
+FOREIGN KEY: Ensures referential integrity with another table.
+
+CHECK: Restricts values (e.g., CHECK (age >= 18)).
+--------------------------------------------------------------------------------------------------------
+6. Difference between JOINs
+
+INNER JOIN → Common rows in both tables.
+
+LEFT JOIN → All from left + matched from right.
+
+RIGHT JOIN → All from right + matched from left.
+
+FULL JOIN → All rows from both sides.
+--------------------------------------------------------------------------------------------------------
+7. Subquery vs Correlated Subquery
+
+Subquery: Executes once, result used by outer query.
+
+Correlated Subquery: Runs once per row of outer query.
+-----------------------------------------------------------------------------------------------------
+8. Difference between NULL, 0, ‘’
+
+NULL → Unknown / Missing.
+
+0 → Numeric zero.
+
+'' → Empty string.
+-----------------------------------------------------------------------------------------------------
+9. DISTINCT vs GROUP BY
+
+DISTINCT removes duplicates.
+
+GROUP BY groups data for aggregation (like COUNT, SUM).
+----------------------------------------------------------------------------------------------
+10. CHAR vs VARCHAR
+
+CHAR(n): Fixed length (pads with spaces).
+
+VARCHAR(n): Variable length (saves space).
+------------------------------------------------------------------------------------------------
+🔹 Intermediate SQL Questions
+
+11. Indexes – Clustered vs Non-clustered
+
+Clustered Index: Data stored in sorted order (only 1 per table).
+
+Non-Clustered Index: Separate structure, stores pointers to data (many per table).
+-------------------------------------------------------------------------------------------
+12. Views – Advantages/Disadvantages
+
+View = Saved SQL query (virtual table).
+
+Advantages: Security, simplify queries, reusable.
+
+Disadvantages: Slower on large joins, can’t always update.
+----------------------------------------------------------------------------------------
+13. Normalization (1NF, 2NF, 3NF, BCNF)
+Ans:-
+1NF: Atomic values only.
+2NF: No partial dependency (applies to composite keys).
+3NF: No transitive dependency.
+BCNF: Stronger form of 3NF.
+----------------------------------------------------------------------------------------
+14. Denormalization
+Ans:-
+Opposite of normalization → Add redundancy for faster queries.
+ -------------------------------------------------------------------------------------------
+15. Stored Procedure vs Function
+Ans:-
+Procedure: Can perform multiple actions, return multiple values, can’t use in SELECT.
+Function: Returns single value, can be used in SELECT.
+---------------------------------------------------------------------------
+16. Window Functions
+Ans:-
+SELECT emp_id, salary,
+  RANK() OVER(ORDER BY salary DESC) AS rank,
+  DENSE_RANK() OVER(ORDER BY salary DESC) AS dense_rank,
+  ROW_NUMBER() OVER(ORDER BY salary DESC) AS row_num
+FROM employees;
+
+--------------------------------------------------------------------------
+17. CTE vs Subquery
+CTE: Temporary named result set, better readability, can be recursive.
+Subquery: Inline, reusable only once.
+----------------------------------------------------------------------------------
+18. ACID Properties
+Ans:-
+Atomicity → All or nothing.
+Consistency → Valid state before/after transaction.
+Isolation → Transactions independent.
+Durability → Changes survive crashes.
+-----------------------------------------------------------------------------------
+19. UNION vs UNION ALL
+Ans:-
+UNION: Removes duplicates.
+UNION ALL: Keeps duplicates (faster).
+----------------------------------------------------------------------------------------
+20. OLTP vs OLAP
+OLTP → Transactional DB (banking, e-commerce).
+OLAP → Analytical DB (data warehouses, BI).
+
+🔹 Advanced SQL Questions
+---------------------------------------------------------------------------------------
+21. Indexing Pros/Cons
+✅ Faster read performance.
+❌ Slows down INSERT/UPDATE/DELETE, uses storage.
+----------------------------------------------------------------------------------------
+22. Triggers
+Ans:-
+Auto-executed code on INSERT/UPDATE/DELETE.
+BEFORE → Runs before change.
+AFTER → Runs after change.
+----------------------------------------------------------------------------------------
+23. Deadlock
+Ans:-
+Two transactions waiting for each other’s lock.
+Solution: Use consistent locking order, shorter transactions, NOLOCK where safe.
+------------------------------------------------------------------------------------------
+24. Partitioning
+
+Divide large tables → Range, List, Hash, Composite.
+-----------------------------------------------------------------------------------------
+25. Materialized Views
+
+Like views but store result physically. Faster, but need refresh.
+---------------------------------------------------------------------------------------------
+26. Second Highest Salary
+
+SELECT MAX(salary) 
+FROM employees 
+WHERE salary < (SELECT MAX(salary) FROM employees);
+
+--------------------------------------------------------------------------------------------------
+27. Find Duplicates
+
+SELECT name, COUNT(*) 
+FROM employees 
+GROUP BY name 
+HAVING COUNT(*) > 1;
+------------------------------------------------------------------------------------------------------
+
+28. Query Optimization Techniques
+
+Use indexes, avoid SELECT *, use EXISTS instead of IN, analyze execution plan, denormalize if needed.
+-----------------------------------------------------------------------------------------------------------
+29. EXISTS vs IN
+
+EXISTS: Checks if subquery returns rows (faster for large data).
+
+IN: Compares values from a list or subquery (good for small lists).
+-------------------------------------------------------------------------------------------------------------
+30. Database Design for Social Media
+
+Users table: user_id, name, email
+
+Posts table: post_id, user_id, content, timestamp
+
+Likes table: like_id, user_id, post_id
+
+Comments table: comment_id, post_id, user_id, text
