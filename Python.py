@@ -11,7 +11,7 @@ Find the largest/smallest number in a list
 Reverse a list or string
 Find duplicate elements in a list
 Check if a number is Armstrong
-
+-------------------------------------------------------------------------------------
  Intermediate Python Questions (Logic + Programming)
 
 Sort a list without using sort() or sorted()
